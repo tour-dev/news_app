@@ -58,6 +58,7 @@ dependencies:
 
   # Cached Image - Caches images fetched from the network locally.
   cached_network_image: ^3.4.1
+  dio: ^5.9.0
 
 dev_dependencies:
   flutter_test:
