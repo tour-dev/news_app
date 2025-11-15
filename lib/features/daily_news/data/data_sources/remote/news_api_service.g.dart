@@ -11,7 +11,9 @@ part of 'news_api_service.dart';
 class _NewsApiService implements NewsApiService {
   _NewsApiService(
     this._dio, {
+    // ignore: unused_element_parameter
     this.baseUrl,
+    // ignore: unused_element_parameter
     this.errorLogger,
   }) {
     baseUrl ??= 'https://newsapi.org/v2';
