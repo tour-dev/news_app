@@ -11,9 +11,20 @@ class ArticleModel extends ArticleEntity {
     String? publishedAt,
     String? content,
     String? source,
-  });
+  }) : super(
+         id: id,
+         author: author,
+         title: title,
+         description: description,
+         url: url,
+         urlToImage: urlToImage,
+         publishedAt: publishedAt,
+         content: content,
+         source: source,
+       );
 
   factory ArticleModel.fromJson(Map<String, dynamic> map) {
+    final source = map['source'];
     return ArticleModel(
       author: map['author'] ?? "",
       title: map['title'] ?? "",
@@ -22,7 +33,7 @@ class ArticleModel extends ArticleEntity {
       urlToImage: map['urlToImage'] ?? "",
       publishedAt: map['publishedAt'] ?? "",
       content: map['content'] ?? "",
-      source: map['source']['name'] ?? "",
+      source: source is Map<String, dynamic> ? source['name'] as String? : "",
     );
   }
 }
